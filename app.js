@@ -1,5 +1,7 @@
 const  express = require('express')
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
+// dawin kakak tengku darmis jam 2
 
 const app = express()
 const PORT = 5000
@@ -12,6 +14,7 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({
     extended:false
 }))
+app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
